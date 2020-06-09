@@ -1,0 +1,33 @@
+#define BLYNK_PRINT Serial
+
+#include <ESP8266WiFi.h>
+
+#include <BlynkSimpleEsp8266.h>
+
+char auth[] = "";//auth token from blynk
+
+char ssid[] = "";//your wifi username or ssid 
+
+char pass[] = "";//your wifi password 
+
+void setup()
+
+{
+
+Serial.begin(9600);
+
+pinMode(D3,OUTPUT);
+
+digitalWrite(D3,HIGH);
+
+Blynk.begin(auth, ssid, pass);
+
+}
+
+void loop()
+
+{
+
+Blynk.run();
+
+}
